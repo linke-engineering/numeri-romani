@@ -8,10 +8,21 @@
     <RootNamespace>Sinistrius.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Title>Numeri Romani</Title>
+    <Authors>Sinistrius</Authors>
+    <Company>Carsten Linke</Company>
+		<Version>0.1.0</Version>
+    <Description>Numeri Romani is a .NET library for dealing with Roman numerals.</Description>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Sinistrius/NumeriRomani.git</RepositoryUrl>
+    <PackageTags>Roman numerals; conversion</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\..\.editorconfig" Link=".editorconfig" />
+    <None Include="..\..\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
