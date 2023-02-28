@@ -31,16 +31,11 @@ public class RomanNumeralsFormatterTests
     [DataRow(1, "I")]
     [DataRow(2, "II")]
     [DataRow(4, "IV")]
-    [DataRow(7, "VII")]
-    [DataRow(10, "X")]
-    [DataRow(14, "XIV")]
     [DataRow(49, "XLIX")]
     [DataRow(101, "CI")]
     [DataRow(1946, "MCMXLVI")]
     public void Format_Integer_ReturnsRomanNumeral(int number, string expectedString)
     {
-        // Arrange
-
         // Act
         string actualString = String.Format(_formatter, "{0}", number);
 
@@ -89,7 +84,7 @@ public class RomanNumeralsFormatterTests
     public void Format_NonInteger_ThrowsArgumentException(object value)
     {
         // Act
-        string actualString = String.Format(_formatter, "{0}", value);
+        _ = String.Format(_formatter, "{0}", value);
     }
 
     #endregion

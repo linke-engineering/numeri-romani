@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 
 namespace Sinistrius.NumeriRomani;
 
@@ -66,10 +67,10 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
             return "";
         }
 
-        // Reject values that aren't positive integers
+        // Reject values that aren't non-negative integers
         if (!Int32.TryParse(arg.ToString(), out int number) || number < 0)
         {
-            throw new ArgumentException($"{arg} is not a positive number.", nameof(arg));
+            throw new ArgumentException($"{arg} is not a non-negative integer.", nameof(arg));
         }
 
         // Convert to Roman numeral

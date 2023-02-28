@@ -9,7 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F7EEB510-3C5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FF531C82-0ABF-4BE7-95CF-1C38E40AC3AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumeriRomani.UnitTests", "test\NumeriRomani.UnitTests\NumeriRomani.UnitTests.csproj", "{4DA3598B-3BB6-4A02-8BFC-BF9640483394}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumeriRomani.UnitTests", "test\NumeriRomani.UnitTests\NumeriRomani.UnitTests.csproj", "{4DA3598B-3BB6-4A02-8BFC-BF9640483394}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1375ED3C-24F6-4463-89F5-C2377AFBB8BE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
