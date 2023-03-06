@@ -62,9 +62,15 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
         }
 
         // Reject values that aren't non-negative integers
-        if (!Int32.TryParse(arg.ToString(), out int number) || number < 0)
+        if (!Int32.TryParse(arg.ToString(), out int number))
         {
-            throw new ArgumentException($"{arg} is not a non-negative integer.", nameof(arg));
+            throw new ArgumentException($"{arg} is not an integer.", nameof(arg));
+        }
+
+        // Reject out-of-range values
+        if (number < RomanNumeral.MinValue || number > RomanNumeral.MaxValue)
+        {
+            throw new ArgumentOutOfRangeException(nameof(arg), $"{arg} must be an integer between {RomanNumeral.MinValue} and {RomanNumeral.MaxValue}.");
         }
 
         // Convert to Roman numeral

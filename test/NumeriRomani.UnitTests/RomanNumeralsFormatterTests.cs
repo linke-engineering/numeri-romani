@@ -1,11 +1,9 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Diagnostics.CodeAnalysis;
+﻿namespace Sinistrius.NumeriRomani.UnitTests;
 
 
-namespace Sinistrius.NumeriRomani.UnitTests;
-
-
-[ExcludeFromCodeCoverage]
+/// <summary>
+/// Tests the <see cref="RomanNumeralsFormatter"/> class.
+/// </summary>
 [TestClass]
 public class RomanNumeralsFormatterTests
 {
@@ -41,7 +39,8 @@ public class RomanNumeralsFormatterTests
     [DataRow(49, "XLIX")]
     [DataRow(101, "CI")]
     [DataRow(1946, "MCMXLVI")]
-    public void Format_Integer_ReturnsRomanNumeral(int number, string expectedString)
+    [DataRow(388999, "ↈↈↈↇↂↂↂↁMMMCMXCIX")]
+    public void Format_ValidInteger_ReturnsRomanNumeral(int number, string expectedString)
     {
         foreach (string formatString in _formatStrings)
         {
@@ -71,11 +70,28 @@ public class RomanNumeralsFormatterTests
     /// <summary>
     /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
     /// </summary>
+    /// <param name="number">An integer that represents the number to be formatted.</param>
+    [TestMethod]
+    [DataRow(-1)]
+    [DataRow(390000)]
+    [ExpectedException(typeof(ArgumentOutOfRangeException))]
+    public void ToRoman_OutOfRange_ThrowsArgumentOutOfRangeException(int number)
+    {
+        foreach (string formatString in _formatStrings)
+        {
+            // Act
+            _ = String.Format(_formatter, formatString, number);
+        }
+    }
+
+
+    /// <summary>
+    /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
+    /// </summary>
     /// <param name="value">An object that represents the value to be formatted.</param>
     [TestMethod]
     [DataRow("abc")]
     [DataRow(1.23)]
-    [DataRow (-1)]
     [ExpectedException(typeof(ArgumentException))]
     public void Format_NonInteger_ThrowsArgumentException(object value)
     {

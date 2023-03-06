@@ -1,11 +1,9 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Diagnostics.CodeAnalysis;
+﻿namespace Sinistrius.NumeriRomani.UnitTests;
 
 
-namespace Sinistrius.NumeriRomani.UnitTests;
-
-
-[ExcludeFromCodeCoverage]
+/// <summary>
+/// Tests the <see cref="Int32Extension"/> class.
+/// </summary>
 [TestClass]
 public class Int32ExtensionTests
 {
@@ -25,7 +23,8 @@ public class Int32ExtensionTests
     [DataRow(49, "XLIX")]
     [DataRow(101, "CI")]
     [DataRow(1946, "MCMXLVI")]
-    public void ToRoman_ValidInt32_ReturnsRomanNumeral(int number, string expectedString)
+    [DataRow(388999, "ↈↈↈↇↂↂↂↁMMMCMXCIX")]
+    public void ToRoman_ValidInteger_ReturnsRomanNumeral(int number, string expectedString)
     {
         // Act
         string actualString = number.ToRoman();
@@ -38,12 +37,15 @@ public class Int32ExtensionTests
     /// <summary>
     /// Tests the <see cref="Int32Extension.ToRoman(int)"/> method.
     /// </summary>
+    /// <param name="number">An integer that represents the number to be formatted.</param>
     [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
-    public void ToRoman_NonInteger_ThrowsArgumentException()
+    [DataRow(-1)]
+    [DataRow(390000)]
+    [ExpectedException(typeof(ArgumentOutOfRangeException))]
+    public void ToRoman_OutOfRange_ThrowsArgumentOutOfRangeException(int number)
     {
         // Act
-        _ = (-1).ToRoman();
+        _ = number.ToRoman();
     }
 
     #endregion
