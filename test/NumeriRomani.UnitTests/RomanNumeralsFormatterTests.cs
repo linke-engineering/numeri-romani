@@ -17,6 +17,12 @@ public class RomanNumeralsFormatterTests
     /// </summary>
     private readonly RomanNumeralsFormatter _formatter = new();
 
+
+    /// <summary>
+    /// The allowed format strings to test.
+    /// </summary>
+    private readonly List<string> _formatStrings = new() { "{0}", "{0:g}", "{0:G}", "{0:R}" };
+
     #endregion
 
 
@@ -28,6 +34,7 @@ public class RomanNumeralsFormatterTests
     /// <param name="number">An integer that represents the number to be formatted.</param>
     /// <param name="expectedString">A string that represents the Roman numeral.</param>
     [TestMethod]
+    [DataRow(0, "")]
     [DataRow(1, "I")]
     [DataRow(2, "II")]
     [DataRow(4, "IV")]
@@ -36,25 +43,14 @@ public class RomanNumeralsFormatterTests
     [DataRow(1946, "MCMXLVI")]
     public void Format_Integer_ReturnsRomanNumeral(int number, string expectedString)
     {
-        // Act
-        string actualString = String.Format(_formatter, "{0}", number);
+        foreach (string formatString in _formatStrings)
+        {
+            // Act
+            string actualString = String.Format(_formatter, formatString, number);
 
-        // Assert
-        Assert.AreEqual(expectedString, actualString);
-    }
-
-
-    /// <summary>
-    /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
-    /// </summary>
-    [TestMethod]
-    public void Format_Zero_ReturnsEmpty()
-    {
-        // Act
-        string actualString = String.Format(_formatter, "{0}", 0);
-
-        // Assert
-        Assert.AreEqual(String.Empty, actualString);
+            // Assert
+            Assert.AreEqual(expectedString, actualString);
+        }
     }
 
 
@@ -83,8 +79,11 @@ public class RomanNumeralsFormatterTests
     [ExpectedException(typeof(ArgumentException))]
     public void Format_NonInteger_ThrowsArgumentException(object value)
     {
-        // Act
-        _ = String.Format(_formatter, "{0}", value);
+        foreach (string formatString in _formatStrings)
+        {
+            // Act
+            _ = String.Format(_formatter, formatString, value);
+        }
     }
 
     #endregion

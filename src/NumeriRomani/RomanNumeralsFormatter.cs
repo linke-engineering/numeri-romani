@@ -1,5 +1,5 @@
-﻿using System.Globalization;
-using System.Text;
+﻿using System.Text;
+
 
 namespace Sinistrius.NumeriRomani;
 
@@ -10,12 +10,12 @@ namespace Sinistrius.NumeriRomani;
 public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
 {
 
-    #region Constants
+    #region Local Field
 
     /// <summary>
-    /// The format string to indicate formatting as Roman numeral.
+    /// A list of allowed format strings.
     /// </summary>
-    private const string RomanFormatString = "R";
+    private readonly List<string?> _validFormatStrings = new() { null, "", "g", "G", "R" };
 
     #endregion
 
@@ -49,22 +49,16 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
             return null;
         }
 
-        // Set default format string
-        if (String.IsNullOrEmpty(format))
+        // Skip empty value
+        if (arg == null || String.IsNullOrEmpty(arg.ToString()) || arg.ToString() == "0")
         {
-            format = RomanFormatString;
+            return "";
         }
 
         // Validate format string
-        if (format != RomanFormatString)
+        if (!_validFormatStrings.Contains(format))
         {
             throw new FormatException(String.Format("'{0}' cannot be used to format {1}.", format, arg.ToString()));
-        }
-
-        // Skip empty value
-        if (String.IsNullOrEmpty(arg.ToString()) || arg.ToString() == "0")
-        {
-            return "";
         }
 
         // Reject values that aren't non-negative integers

@@ -39,20 +39,6 @@ public class Int32ExtensionTests
     /// Tests the <see cref="Int32Extension.ToRoman(int)"/> method.
     /// </summary>
     [TestMethod]
-    public void ToRoman_Zero_ReturnsEmpty()
-    {
-        // Act
-        string actualString = 0.ToRoman();
-
-        // Assert
-        Assert.AreEqual(String.Empty, actualString);
-    }
-
-
-    /// <summary>
-    /// Tests the <see cref="Int32Extension.ToRoman(int)"/> method.
-    /// </summary>
-    [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
     public void ToRoman_NonInteger_ThrowsArgumentException()
     {
