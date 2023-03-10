@@ -18,6 +18,7 @@
     <ApplicationIcon>NumeriRomani.ico</ApplicationIcon>
     <PackageIcon>NumeriRomani.png</PackageIcon>
     <PackageLicenseFile>legalcode.txt</PackageLicenseFile>
+    <Copyright>Copyright (c) Carsten Linke 2023</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
