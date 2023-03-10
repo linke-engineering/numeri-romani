@@ -57,7 +57,7 @@ internal class RomanNumeralMapper
 
         // Roman-to-integer map is the reversion of a subset of the integer-to-Roman map
         _romanToIntegerMap = _integerToRomanMap.Where(m => m.Value.Length == 1)
-                                             .ToDictionary(x => x.Value[0], x => x.Key);
+                                               .ToDictionary(x => x.Value[0], x => x.Key);
     }
 
     #endregion
