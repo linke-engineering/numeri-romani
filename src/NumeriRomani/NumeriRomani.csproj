@@ -10,7 +10,7 @@
     <Title>Numeri Romani</Title>
     <Authors>Sinistrius</Authors>
     <Company>Carsten Linke</Company>
-		<Version>0.1.2</Version>
+		<Version>1.0.0</Version>
     <Description>A .NET library for dealing with Roman numerals</Description>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Sinistrius/NumeriRomani.git</RepositoryUrl>
@@ -20,6 +20,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="NumeriRomani.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\NumeriRomani.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\..\Readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

@@ -14,8 +14,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1375ED3C-24F6-4463-89F5-C2377AFBB8BE}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		src\NumeriRomani\NumeriRomani.ico = src\NumeriRomani\NumeriRomani.ico
-		NumeriRomani.png = NumeriRomani.png
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
