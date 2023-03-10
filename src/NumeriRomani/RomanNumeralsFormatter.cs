@@ -1,7 +1,4 @@
-﻿using System.Text;
-
-
-namespace Sinistrius.NumeriRomani;
+﻿namespace Sinistrius.NumeriRomani;
 
 
 /// <summary>
@@ -67,30 +64,9 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
             throw new ArgumentException($"{arg} is not an integer.", nameof(arg));
         }
 
-        // Reject out-of-range values
-        if (number < RomanNumeral.MinValue || number > RomanNumeral.MaxValue)
-        {
-            throw new ArgumentOutOfRangeException(nameof(arg), $"{arg} must be an integer between {RomanNumeral.MinValue} and {RomanNumeral.MaxValue}.");
-        }
-
-        // Convert to Roman numeral
-        StringBuilder stringBuilder = new();
-
-        foreach (KeyValuePair<int, string> numeral in new RomanNumeralsDictionary())
-        {
-            if (number <= 0)
-            {
-                break;
-            }
-
-            while (number >= numeral.Key)
-            {
-                stringBuilder.Append(numeral.Value);
-                number -= numeral.Key;
-            }
-        }
-
-        return stringBuilder.ToString();
+        // Convert to Roman representation
+        RomanNumber romanNumber = new(number);
+        return romanNumber.ToString();
     }
 
     #endregion

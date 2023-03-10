@@ -20,15 +20,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="NumeriRomani.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\.editorconfig" Link=".editorconfig" />
-    <None Include="..\..\NumeriRomani.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
     <None Include="..\..\Readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

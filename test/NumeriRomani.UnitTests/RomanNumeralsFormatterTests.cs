@@ -15,12 +15,6 @@ public class RomanNumeralsFormatterTests
     /// </summary>
     private readonly RomanNumeralsFormatter _formatter = new();
 
-
-    /// <summary>
-    /// The allowed format strings to test.
-    /// </summary>
-    private readonly List<string> _formatStrings = new() { "{0}", "{0:g}", "{0:G}", "{0:R}" };
-
     #endregion
 
 
@@ -29,27 +23,16 @@ public class RomanNumeralsFormatterTests
     /// <summary>
     /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
     /// </summary>
-    /// <param name="number">An integer that represents the number to be formatted.</param>
-    /// <param name="expectedString">A string that represents the Roman numeral.</param>
-    [TestMethod]
-    [DataRow(0, "")]
-    [DataRow(1, "I")]
-    [DataRow(2, "II")]
-    [DataRow(4, "IV")]
-    [DataRow(49, "XLIX")]
-    [DataRow(101, "CI")]
-    [DataRow(1946, "MCMXLVI")]
-    [DataRow(388999, "ↈↈↈↇↂↂↂↁMMMCMXCIX")]
-    public void Format_ValidInteger_ReturnsRomanNumeral(int number, string expectedString)
+    /// <param name="format">A string that represents the format string.</param>
+    [DataTestMethod]
+    [DynamicData(nameof(TestData.Formats), typeof(TestData), DynamicDataSourceType.Method)]
+    public void Format_ValidFormat_ReturnsRomanNumber(string format)
     {
-        foreach (string formatString in _formatStrings)
-        {
-            // Act
-            string actualString = String.Format(_formatter, formatString, number);
+        // Act
+        string actualString = String.Format(_formatter, format, 2023);
 
-            // Assert
-            Assert.AreEqual(expectedString, actualString);
-        }
+        // Assert
+        Assert.AreEqual("MMXXIII", actualString);
     }
 
 
@@ -57,7 +40,7 @@ public class RomanNumeralsFormatterTests
     /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
     /// </summary>
     [TestMethod]
-    public void Format_Empty_ReturnsEmpty()
+    public void Format_EmptyFormat_ReturnsEmpty()
     {
         // Act
         string actualString = String.Format(_formatter, "");
@@ -70,18 +53,45 @@ public class RomanNumeralsFormatterTests
     /// <summary>
     /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
     /// </summary>
-    /// <param name="number">An integer that represents the number to be formatted.</param>
-    [TestMethod]
-    [DataRow(-1)]
-    [DataRow(390000)]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
-    public void ToRoman_OutOfRange_ThrowsArgumentOutOfRangeException(int number)
+    /// <param name="format">A string that represents the format string.</param>
+    [DataTestMethod]
+    [DynamicData(nameof(TestData.InvalidFormats), typeof(TestData), DynamicDataSourceType.Method)]
+    [ExpectedException(typeof(FormatException))]
+    public void Format_InvalidFormat_ThrowsFormatException(string format)
     {
-        foreach (string formatString in _formatStrings)
-        {
-            // Act
-            _ = String.Format(_formatter, formatString, number);
-        }
+        // Act
+        _ = String.Format(_formatter, format, 2023);
+    }
+
+
+    /// <summary>
+    /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
+    /// </summary>
+    /// <param name="number">An integer that represents the number to be formatted.</param>
+    /// <param name="expectedString">A string that represents the Roman numeral.</param>
+    [DataTestMethod]
+    [DynamicData(nameof(TestData.IntsAndRomans), typeof(TestData), DynamicDataSourceType.Method)]
+    public void Format_ValidInteger_ReturnsRomanNumeral(int number, string expectedString)
+    {
+        // Act
+        string actualString = String.Format(_formatter, "{0:R}", number);
+
+        // Assert
+        Assert.AreEqual(expectedString, actualString);
+    }
+
+
+    /// <summary>
+    /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
+    /// </summary>
+    /// <param name="number">An integer that represents the number to be formatted.</param>
+    [DataTestMethod]
+    [DynamicData(nameof(TestData.InvalidInts), typeof(TestData), DynamicDataSourceType.Method)]
+    [ExpectedException(typeof(ArgumentOutOfRangeException))]
+    public void Format_InvalidNumber_ThrowsArgumentOutOfRangeException(int number)
+    {
+        // Act
+        _ = String.Format(_formatter, "{0:R}", number);
     }
 
 
@@ -89,17 +99,13 @@ public class RomanNumeralsFormatterTests
     /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
     /// </summary>
     /// <param name="value">An object that represents the value to be formatted.</param>
-    [TestMethod]
-    [DataRow("abc")]
-    [DataRow(1.23)]
+    [DataTestMethod]
+    [DynamicData(nameof(TestData.NonInts), typeof(TestData), DynamicDataSourceType.Method)]
     [ExpectedException(typeof(ArgumentException))]
     public void Format_NonInteger_ThrowsArgumentException(object value)
     {
-        foreach (string formatString in _formatStrings)
-        {
-            // Act
-            _ = String.Format(_formatter, formatString, value);
-        }
+        // Act
+        _ = String.Format(_formatter, "{0:R}", value);
     }
 
     #endregion
