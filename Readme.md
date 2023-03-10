@@ -3,7 +3,8 @@
 *Numeri Romani* is a .NET library for dealing with Roman numerals.
 
 Features:
-- Convert a non-negative integer to a Roman numeral
+- Writes integers as Roman numbers
+- Parses a Roman number into an integer
 
 
 ## Installation
@@ -13,17 +14,55 @@ Use the NuGet Package Manager to install *Numeri Romani*.
 
 ## Usage
 
+### Restrictions
+
+*Numeri Romani* currently only works for integers between 0 and 499,999.
+
+
+### Format Integers as Roman Numbers
+
+#### Option 1: Use an extension method
+
+You can use the *Int32.ToRoman()* extension method to easily format integers as Roman numbers.
+
 ```cs
 using Sinistrius.NumeriRomani;
 
 int number = 123;
 
-// Convert to "CXXIII" using the String.Format() method
-RomanNumeralsFormatter formatter = new();
-string romanNumeral = String.Format(formatter, "{0:R}", number);
+string roman = number.ToRoman();
+// assigns "CXXIII"
+```
 
-// Convert to "CXXIII" using the ToRoman() extension method
-string romanNumeral = number.ToRoman();
+
+#### Option 2: Use a Formatter
+
+A more sophisticated way is to use the *String.Format()* method with a special *RomanNumeralsFormatter()*. In the format string parameter you may omit the format specifier or use the general specifiers *g* or *G* or the special specifier *R*.
+
+```cs
+using Sinistrius.NumeriRomani;
+
+int number = 123;
+
+RomanNumeralsFormatter formatter = new();
+string roman = String.Format(formatter, "{0:R}", number);
+// assigns "CXXIII"
+```
+
+### Parse Roman Numbers as Integers
+
+To parse a Roman number as an integer, use the *Int32.ParseRoman()* or *Int32.TryParseRoman()* extension methods.
+
+```cs
+using Sinistrius.NumeriRomani;
+
+string roman = "CXXXIII";
+
+int number1 = Int32.ParseRoman(roman)
+// assigns 123
+
+bool isSuccess = Int32.TryParseRoman(roman, out int number2);
+// returns true and assigns 123 to number2
 ```
 
 
