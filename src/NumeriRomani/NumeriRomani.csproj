@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <AssemblyName>Sinistrius.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>Sinistrius.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>Numeri Romani</Title>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Title>$(AssemblyName)</Title>
     <Authors>Sinistrius</Authors>
     <Company>Carsten Linke</Company>
-		<Version>1.0.0</Version>
+		<Version>1.0.0.1</Version>
     <Description>A .NET library for dealing with Roman numerals</Description>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Sinistrius/NumeriRomani.git</RepositoryUrl>
