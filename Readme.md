@@ -1,10 +1,6 @@
-# Numeri Romani
+# Sinistrius.NumeriRomani
 
-*Numeri Romani* is a .NET library for dealing with Roman numerals.
-
-Features:
-- Writes integers as Roman numbers
-- Parses a Roman number into an integer
+A .NET library for dealing with Roman numerals
 
 
 ## Installation
@@ -16,7 +12,7 @@ Use the NuGet Package Manager to install *Numeri Romani*.
 
 ### Restrictions
 
-*Numeri Romani* currently only works for integers between 0 and 499,999.
+The library currently only works for integers between 0 and 499,999.
 
 
 ### Format Integers as Roman Numbers
