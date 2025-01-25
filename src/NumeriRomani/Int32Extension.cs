@@ -7,6 +7,8 @@
 public static class Int32Extension
 {
 
+    #region Methods
+
     /// <summary>
     /// Shortcut extension to format an integer value as a Roman numeral.
     /// </summary>
@@ -51,5 +53,7 @@ public static class Int32Extension
             return false;
         }
     }
+
+    #endregion
 
 }

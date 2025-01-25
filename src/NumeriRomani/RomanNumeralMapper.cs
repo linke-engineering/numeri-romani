@@ -26,7 +26,7 @@ internal class RomanNumeralMapper
     #endregion
 
 
-    #region Constructor
+    #region Constructors
 
     /// <summary>
     /// Initializes the <see cref="RomanNumeralMapper"/>.

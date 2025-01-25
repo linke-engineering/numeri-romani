@@ -7,7 +7,7 @@
 public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
 {
 
-    #region Local Field
+    #region Local Fields
 
     /// <summary>
     /// A list of allowed format strings.
@@ -17,7 +17,7 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
     #endregion
 
 
-    #region Implementation of IFormatProvider
+    #region Methods
 
     /// <inheritdoc/>
     public object? GetFormat(Type? formatType)
@@ -32,10 +32,6 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
         }
     }
 
-    #endregion
-
-
-    #region Implementation of ICustomFormatter
 
     /// <inheritdoc/>
     public string Format(string? format, object? arg, IFormatProvider? formatProvider)
