@@ -8,15 +8,16 @@ namespace LinkeEngineering.NumeriRomani;
 /// <summary>
 /// A number that is represented in Roman numerals.
 /// </summary>
-internal class RomanNumber
+internal partial class RomanNumber
 {
 
     #region Local Fields
 
     /// <summary>
-    /// The regex pattern of a valid Roman number.
+    /// A regex object that represents a valid Roman number.
     /// </summary>
-    private const string RomanNumberPattern = @"^ↈ{0,4}ↇ?ↂ{0,4}ↁ?M{0,4}((C[MD])|(D?C{0,4}))?((X[CL])|(L?X{0,4}))?((I[XV])|(V?I{0,4}))?$";
+    [GeneratedRegex(@"^ↈ{0,4}ↇ?ↂ{0,4}ↁ?M{0,4}((C[MD])|(D?C{0,4}))?((X[CL])|(L?X{0,4}))?((I[XV])|(V?I{0,4}))?$")]
+    private static partial Regex RomanNumberRegex();
 
 
     /// <summary>
@@ -75,12 +76,9 @@ internal class RomanNumber
     /// <param name="romanNumber">A string that represents the value written in Roman numerals.</param>
     internal RomanNumber(string? romanNumber)
     {
-        if (romanNumber == null)
-        {
-            throw new ArgumentNullException(nameof(romanNumber));
-        }
+        ArgumentNullException.ThrowIfNull(romanNumber, nameof(romanNumber));
 
-        if (!Regex.IsMatch(romanNumber, RomanNumberPattern))
+        if (!RomanNumberRegex().IsMatch(romanNumber))
         {
             throw new InvalidRomanNumberException(romanNumber.ToString());
         }

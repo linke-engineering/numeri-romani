@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-
-namespace LinkeEngineering.NumeriRomani.UnitTests;
+﻿namespace LinkeEngineering.NumeriRomani.UnitTests;
 
 
 /// <summary>
@@ -22,6 +19,34 @@ public class RomanNumeralsFormatterTests
 
 
     #region Tests
+
+    /// <summary>
+    /// Tests the <see cref="RomanNumeralsFormatter.GetFormat(Type?)"/> method.
+    /// </summary>
+    [TestMethod]
+    public void GetFormat_ValidFormatter_ReturnsFormatter()
+    {
+        // Act
+        object? actualFormat = _formatter.GetFormat(typeof(ICustomFormatter));
+     
+        // Assert
+        Assert.AreEqual(_formatter, actualFormat);
+    }
+
+
+    /// <summary>
+    /// Tests the <see cref="RomanNumeralsFormatter.GetFormat(Type?)"/> method.
+    /// </summary>
+    [TestMethod]
+    public void GetFormat_InvalidFormatter_ReturnsNull()
+    {
+        // Act
+        object? actualFormat = _formatter.GetFormat(typeof(IFormatProvider));
+
+        // Assert
+        Assert.IsNull(actualFormat);
+    }
+
 
     /// <summary>
     /// Tests the <see cref="RomanNumeralsFormatter.Format(string?, object?, IFormatProvider?)"/> method.
