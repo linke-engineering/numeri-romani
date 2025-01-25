@@ -10,7 +10,7 @@
     <Title>$(AssemblyName)</Title>
     <Authors>linke-engineering</Authors>
     <Company>Linke Genealogical Engineering</Company>
-		<Version>1.0.2</Version>
+		<Version>1.1.0</Version>
     <Description>A .NET library for dealing with Roman numerals</Description>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/linke-engineering/numeri-romani.git</RepositoryUrl>
