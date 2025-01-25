@@ -1,8 +1,8 @@
-﻿using Sinistrius.NumeriRomani.Exceptions;
+﻿using LinkeEngineering.NumeriRomani.Exceptions;
 using System.Text.RegularExpressions;
 
 
-namespace Sinistrius.NumeriRomani;
+namespace LinkeEngineering.NumeriRomani;
 
 
 /// <summary>

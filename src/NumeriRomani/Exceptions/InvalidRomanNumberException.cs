@@ -1,4 +1,4 @@
-﻿namespace Sinistrius.NumeriRomani.Exceptions;
+﻿namespace LinkeEngineering.NumeriRomani.Exceptions;
 
 
 /// <summary>

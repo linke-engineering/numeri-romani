@@ -1,4 +1,4 @@
-﻿namespace Sinistrius.NumeriRomani;
+﻿namespace LinkeEngineering.NumeriRomani;
 
 
 /// <summary>

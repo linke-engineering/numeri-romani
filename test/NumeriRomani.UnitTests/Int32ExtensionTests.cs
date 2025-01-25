@@ -1,7 +1,8 @@
-﻿using Sinistrius.NumeriRomani.Exceptions;
+﻿using LinkeEngineering.NumeriRomani.Exceptions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace Sinistrius.NumeriRomani.UnitTests;
+namespace LinkeEngineering.NumeriRomani.UnitTests;
 
 
 /// <summary>
@@ -36,11 +37,10 @@ public class Int32ExtensionTests
     /// <param name="number">An integer that represents the number to be formatted.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.InvalidInts), typeof(TestData), DynamicDataSourceType.Method)]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void ToRoman_OutOfRange_ThrowsArgumentOutOfRangeException(int number)
     {
-        // Act
-        _ = number.ToRoman();
+        // Act and assert
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => number.ToRoman());
     }
 
     #endregion
@@ -71,11 +71,10 @@ public class Int32ExtensionTests
     /// <param name="roman">A string that represents the Roman number to be parsed.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.InvalidRomans), typeof(TestData), DynamicDataSourceType.Method)]
-    [ExpectedException(typeof(InvalidRomanNumberException))]
     public void ParseRoman_InvalidRoman_ThrowsInvalidRomanNumberException(string roman)
     {
-        // Act
-        _ = Int32Extension.ParseRoman(roman);
+        // Act and assert
+        Assert.ThrowsException<InvalidRomanNumberException>(() => Int32Extension.ParseRoman(roman));
     }
 
 
