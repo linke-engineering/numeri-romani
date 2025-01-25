@@ -13,7 +13,7 @@
 		<Version>1.0.2</Version>
     <Description>A .NET library for dealing with Roman numerals</Description>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/Sinistrius/NumeriRomani.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/linke-engineering/numeri-romani.git</RepositoryUrl>
     <PackageTags>Roman; numerals; conversion</PackageTags>
     <ApplicationIcon>..\..\NumeriRomani.ico</ApplicationIcon>
     <PackageIcon>..\..\NumeriRomani.png</PackageIcon>
