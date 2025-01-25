@@ -16,7 +16,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{2E7977
 		assets\legalcode.txt = assets\legalcode.txt
 		assets\NumeriRomani.ico = assets\NumeriRomani.ico
 		assets\NumeriRomani.png = assets\NumeriRomani.png
-		assets\Readme.md = assets\Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B19B4157-2DC1-4D5F-AC7B-8E8F8652F3AF}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\publish-to-nuget.yml = .github\workflows\publish-to-nuget.yml
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Global

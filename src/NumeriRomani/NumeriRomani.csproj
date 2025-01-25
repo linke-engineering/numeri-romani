@@ -24,7 +24,7 @@
   <ItemGroup>
 		<None Include="../../assets/legalcode.txt" />
     <None Include="../../assets/NumeriRomani.png" />
-    <None Include="../../assets/Readme.md" />
+    <None Include="../../Readme.md" />
   </ItemGroup>
 
 </Project>
