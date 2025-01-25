@@ -1,4 +1,7 @@
-﻿namespace Sinistrius.NumeriRomani.UnitTests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+
+namespace LinkeEngineering.NumeriRomani.UnitTests;
 
 
 /// <summary>
@@ -56,11 +59,10 @@ public class RomanNumeralsFormatterTests
     /// <param name="format">A string that represents the format string.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.InvalidFormats), typeof(TestData), DynamicDataSourceType.Method)]
-    [ExpectedException(typeof(FormatException))]
     public void Format_InvalidFormat_ThrowsFormatException(string format)
     {
-        // Act
-        _ = String.Format(_formatter, format, 2023);
+        // Act and assert
+        Assert.ThrowsException<FormatException>(() => String.Format(_formatter, format, 2023));
     }
 
 
@@ -87,11 +89,10 @@ public class RomanNumeralsFormatterTests
     /// <param name="number">An integer that represents the number to be formatted.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.InvalidInts), typeof(TestData), DynamicDataSourceType.Method)]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Format_InvalidNumber_ThrowsArgumentOutOfRangeException(int number)
     {
-        // Act
-        _ = String.Format(_formatter, "{0:R}", number);
+        // Act and assert
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => String.Format(_formatter, "{0:R}", number));
     }
 
 
@@ -101,11 +102,10 @@ public class RomanNumeralsFormatterTests
     /// <param name="value">An object that represents the value to be formatted.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.NonInts), typeof(TestData), DynamicDataSourceType.Method)]
-    [ExpectedException(typeof(ArgumentException))]
     public void Format_NonInteger_ThrowsArgumentException(object value)
     {
-        // Act
-        _ = String.Format(_formatter, "{0:R}", value);
+        // Act and assert
+        Assert.ThrowsException<ArgumentException>(() => String.Format(_formatter, "{0:R}", value));
     }
 
     #endregion

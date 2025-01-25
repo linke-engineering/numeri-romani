@@ -1,4 +1,4 @@
-﻿namespace Sinistrius.NumeriRomani.UnitTests;
+﻿namespace LinkeEngineering.NumeriRomani.UnitTests;
 
 
 /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Sinistrius.NumeriRomani;
+﻿namespace LinkeEngineering.NumeriRomani;
 
 
 /// <summary>
@@ -12,7 +12,7 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
     /// <summary>
     /// A list of allowed format strings.
     /// </summary>
-    private readonly List<string?> _validFormatStrings = new() { null, "", "g", "G", "R" };
+    private readonly List<string?> _validFormatStrings = [null, "", "g", "G", "R"];
 
     #endregion
 
@@ -40,12 +40,6 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
     /// <inheritdoc/>
     public string Format(string? format, object? arg, IFormatProvider? formatProvider)
     {
-        // Validate format provider
-        if (!Equals(formatProvider))
-        {
-            return null;
-        }
-
         // Skip empty value
         if (arg == null || String.IsNullOrEmpty(arg.ToString()) || arg.ToString() == "0")
         {

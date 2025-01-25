@@ -1,4 +1,4 @@
-# Sinistrius.NumeriRomani
+# Numeri Romani
 
 A .NET library for dealing with Roman numerals
 
@@ -22,7 +22,7 @@ The library currently only works for integers between 0 and 499,999.
 You can use the *Int32.ToRoman()* extension method to easily format integers as Roman numbers.
 
 ```cs
-using Sinistrius.NumeriRomani;
+using LinkeEngineering.NumeriRomani;
 
 int number = 123;
 
@@ -36,7 +36,7 @@ string roman = number.ToRoman();
 A more sophisticated way is to use the *String.Format()* method with a special *RomanNumeralsFormatter()*. In the format string parameter you may omit the format specifier or use the general specifiers *g* or *G* or the special specifier *R*.
 
 ```cs
-using Sinistrius.NumeriRomani;
+using LinkeEngineering.NumeriRomani;
 
 int number = 123;
 
@@ -50,9 +50,9 @@ string roman = String.Format(formatter, "{0:R}", number);
 To parse a Roman number as an integer, use the *Int32.ParseRoman()* or *Int32.TryParseRoman()* extension methods.
 
 ```cs
-using Sinistrius.NumeriRomani;
+using LinkeEngineering.NumeriRomani;
 
-string roman = "CXXXIII";
+string roman = "CXXIII";
 
 int number1 = Int32.ParseRoman(roman)
 // assigns 123

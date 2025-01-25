@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>Sinistrius.$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>Sinistrius.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>LinkeEngineering.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>LinkeEngineering.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Title>$(AssemblyName)</Title>
-    <Authors>Sinistrius</Authors>
+    <Authors>linke-engineering</Authors>
     <Company>Carsten Linke</Company>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
     <Description>A .NET library for dealing with Roman numerals</Description>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Sinistrius/NumeriRomani.git</RepositoryUrl>
@@ -20,24 +20,5 @@
     <PackageLicenseFile>legalcode.txt</PackageLicenseFile>
     <Copyright>Copyright (c) Carsten Linke 2023</Copyright>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="NumeriRomani.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\legalcode.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\NumeriRomani.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\Readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 
 </Project>
