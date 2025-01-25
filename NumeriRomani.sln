@@ -11,10 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FF531C82-0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumeriRomani.UnitTests", "test\NumeriRomani.UnitTests\NumeriRomani.UnitTests.csproj", "{4DA3598B-3BB6-4A02-8BFC-BF9640483394}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1375ED3C-24F6-4463-89F5-C2377AFBB8BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{2E797756-1912-4E31-8DD3-5531F2441399}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\publish-to-nuget.yml = .github\workflows\publish-to-nuget.yml
-		Readme.md = Readme.md
+		assets\legalcode.txt = assets\legalcode.txt
+		assets\NumeriRomani.ico = assets\NumeriRomani.ico
+		assets\NumeriRomani.png = assets\NumeriRomani.png
+		assets\Readme.md = assets\Readme.md
 	EndProjectSection
 EndProject
 Global
