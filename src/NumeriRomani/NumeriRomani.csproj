@@ -22,12 +22,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="legalcode.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="NumeriRomani.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+		<None Include="legalcode.txt" Pack="true" PackagePath="" />
+    <None Include="NumeriRomani.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
