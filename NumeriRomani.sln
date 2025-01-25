@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		legalcode.txt = legalcode.txt
 		NumeriRomani.ico = NumeriRomani.ico
 		NumeriRomani.png = NumeriRomani.png
+		.github\workflows\publish-to-nuget.yml = .github\workflows\publish-to-nuget.yml
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
@@ -32,6 +33,7 @@ Global
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
