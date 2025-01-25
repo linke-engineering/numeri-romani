@@ -14,7 +14,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{2E797756-1912-4E31-8DD3-5531F2441399}"
 	ProjectSection(SolutionItems) = preProject
 		assets\legalcode.txt = assets\legalcode.txt
-		assets\NumeriRomani.ico = assets\NumeriRomani.ico
 		assets\NumeriRomani.png = assets\NumeriRomani.png
 	EndProjectSection
 EndProject
