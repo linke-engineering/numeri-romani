@@ -21,4 +21,13 @@
     <Copyright>Copyright (c) Linke Genealogical Engineering 2023-2025</Copyright>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="legalcode.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NumeriRomani.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
