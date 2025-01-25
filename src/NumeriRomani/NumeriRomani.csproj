@@ -15,9 +15,9 @@
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/linke-engineering/numeri-romani.git</RepositoryUrl>
     <PackageTags>Roman; numerals; conversion</PackageTags>
-    <ApplicationIcon>..\..\NumeriRomani.ico</ApplicationIcon>
-    <PackageIcon>..\..\NumeriRomani.png</PackageIcon>
-    <PackageLicenseFile>..\..\legalcode.txt</PackageLicenseFile>
+    <ApplicationIcon>NumeriRomani.ico</ApplicationIcon>
+    <PackageIcon>NumeriRomani.png</PackageIcon>
+    <PackageLicenseFile>legalcode.txt</PackageLicenseFile>
     <Copyright>Copyright (c) Linke Genealogical Engineering 2023-2025</Copyright>
   </PropertyGroup>
 
