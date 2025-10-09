@@ -12,7 +12,7 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
     /// <summary>
     /// A list of allowed format strings.
     /// </summary>
-    private readonly List<string?> _validFormatStrings = [null, "", "g", "G", "R"];
+    private static readonly HashSet<string?> _validFormatStrings = new() { null, "", "g", "G", "R" };
 
     #endregion
 
@@ -36,8 +36,10 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
     /// <inheritdoc/>
     public string Format(string? format, object? arg, IFormatProvider? formatProvider)
     {
+        string? argString = arg?.ToString();
+
         // Skip empty value
-        if (arg == null || String.IsNullOrEmpty(arg.ToString()) || arg.ToString() == "0")
+        if (String.IsNullOrEmpty(argString) || argString == "0")
         {
             return "";
         }
@@ -45,11 +47,11 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
         // Validate format string
         if (!_validFormatStrings.Contains(format))
         {
-            throw new FormatException(String.Format("'{0}' cannot be used to format {1}.", format, arg.ToString()));
+            throw new FormatException(String.Format("'{0}' cannot be used to format {1}.", format, argString));
         }
 
         // Reject values that aren't non-negative integers
-        if (!Int32.TryParse(arg.ToString(), out int number))
+        if (!Int32.TryParse(argString, out int number))
         {
             throw new ArgumentException($"{arg} is not an integer.", nameof(arg));
         }

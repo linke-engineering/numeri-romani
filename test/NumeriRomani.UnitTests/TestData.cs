@@ -90,7 +90,7 @@ internal class TestData
     }
 
     /// <summary>
-    /// A collection of invvalid format strings to format values as Roman numbers.
+    /// A collection of invalid format strings to format values as Roman numbers.
     /// </summary>
     /// <returns></returns>
     internal static IEnumerable<object[]> InvalidFormats()
