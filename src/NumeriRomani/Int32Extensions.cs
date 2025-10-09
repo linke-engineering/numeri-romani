@@ -2,7 +2,7 @@
 
 
 /// <summary>
-/// Extends the <see cref="Int32"/> struct.
+/// Provides extension methods for the <see cref="Int32"/> struct.
 /// </summary>
 public static class Int32Extensions
 {
