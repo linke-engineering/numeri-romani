@@ -1,25 +1,22 @@
 # Numeri Romani
 
-A .NET library for dealing with Roman numerals
-
+A .NET library for working with Roman numerals
 
 ## Installation
 
-Use the NuGet Package Manager to install *Numeri Romani*.
+Install *Numeri Romani* using the NuGet Package Manager.
 
+## Restrictions
 
-## Usage
+The library currently supports integers in the range from 0 to 499,999.
 
-### Restrictions
+## Features
 
-The library currently only works for integers between 0 and 499,999.
+### Format Integers as Roman Numerals
 
+#### Option 1: Extension method for `int`
 
-### Format Integers as Roman Numbers
-
-#### Option 1: Use an extension method
-
-You can use the *Int32.ToRoman()* extension method to easily format integers as Roman numbers.
+Use the `ToRoman()` extension method to easily convert an integer to its Roman numeral representation:
 
 ```cs
 using LinkeEngineering.NumeriRomani;
@@ -30,10 +27,9 @@ string roman = number.ToRoman();
 // assigns "CXXIII"
 ```
 
+#### Option 2: Using `RomanNumeralsFormatter`
 
-#### Option 2: Use a Formatter
-
-A more sophisticated way is to use the *String.Format()* method with a special *RomanNumeralsFormatter()*. In the format string parameter you may omit the format specifier or use the general specifiers *g* or *G* or the special specifier *R*.
+For advanced formatting, use the `RomanNumeralsFormatter` with `String.Format()`. Supported format strings are: empty, `"g"`, `"G"`, or `"R"`.
 
 ```cs
 using LinkeEngineering.NumeriRomani;
@@ -45,20 +41,32 @@ string roman = String.Format(formatter, "{0:R}", number);
 // assigns "CXXIII"
 ```
 
-### Parse Roman Numbers as Integers
+### Parse Roman Numerals to Integers
 
-To parse a Roman number as an integer, use the *Int32.ParseRoman()* or *Int32.TryParseRoman()* extension methods.
+#### Option 1: Parsing With `ParseRoman()`
+
+Use the extensions method `ParseRoman()` to convert a Roman numeral string to its integer value:
 
 ```cs
 using LinkeEngineering.NumeriRomani;
 
 string roman = "CXXIII";
 
-int number1 = Int32.ParseRoman(roman)
+int number1 = roman.ParseRoman()
 // assigns 123
+```
 
-bool isSuccess = Int32.TryParseRoman(roman, out int number2);
-// returns true and assigns 123 to number2
+#### Option 2: Safe Parsing With `TryParseRoman()`
+
+Use the extension method `TryParseRoman()` to safely parse a Roman numeral string to its integer value:
+
+```cs
+using LinkeEngineering.NumeriRomani;
+
+string roman = "CXXIII";
+
+bool isSuccess = roman.TryParseRoman(out int number);
+// returns true and assigns 123 to number
 ```
 
 

@@ -5,50 +5,14 @@ namespace LinkeEngineering.NumeriRomani.UnitTests;
 
 
 /// <summary>
-/// Tests the <see cref="Int32Extension"/> class.
+/// Tests the <see cref="StringExtensions"/> class.
 /// </summary>
 [TestClass]
-public class Int32ExtensionTests
+public class StringExtensionsTests
 {
 
-    #region ToRoman
-
     /// <summary>
-    /// Tests the <see cref="Int32Extension.ToRoman(int)"/> method.
-    /// </summary>
-    /// <param name="number">An integer that represents the number to be formatted.</param>
-    /// <param name="expectedString">A string that represents the Roman number.</param>
-    [DataTestMethod]
-    [DynamicData(nameof(TestData.IntsAndRomans), typeof(TestData), DynamicDataSourceType.Method)]
-    public void ToRoman_ValidInteger_ReturnsRoman(int number, string expectedString)
-    {
-        // Act
-        string actualString = number.ToRoman();
-
-        // Assert
-        Assert.AreEqual(expectedString, actualString);
-    }
-
-
-    /// <summary>
-    /// Tests the <see cref="Int32Extension.ToRoman(int)"/> method.
-    /// </summary>
-    /// <param name="number">An integer that represents the number to be formatted.</param>
-    [DataTestMethod]
-    [DynamicData(nameof(TestData.InvalidInts), typeof(TestData), DynamicDataSourceType.Method)]
-    public void ToRoman_OutOfRange_ThrowsArgumentOutOfRangeException(int number)
-    {
-        // Act and assert
-        Assert.ThrowsException<ArgumentOutOfRangeException>(() => number.ToRoman());
-    }
-
-    #endregion
-
-
-    #region Parse
-
-    /// <summary>
-    /// Tests the <see cref="Int32Extension.Parse(string, IFormatProvider)"/> method.
+    /// Tests the <see cref="StringExtensions.Parse(string, IFormatProvider)"/> method.
     /// </summary>
     /// <param name="roman">A string that represents the Roman number to be parsed.</param>
     /// <param name="expectedValue">An integer that represents the expected value after the parsing.</param>
@@ -57,7 +21,7 @@ public class Int32ExtensionTests
     public void ParseRoman_ValidRoman_ReturnsInteger(string roman, int expectedValue)
     {
         // Act
-        int actualValue = Int32Extension.ParseRoman(roman);
+        int actualValue = StringExtensions.ParseRoman(roman);
 
         // Assert
         Assert.AreEqual(expectedValue, actualValue);
@@ -65,7 +29,7 @@ public class Int32ExtensionTests
 
 
     /// <summary>
-    /// Tests the <see cref="Int32Extension.Parse(string, IFormatProvider)"/> method.
+    /// Tests the <see cref="StringExtensions.Parse(string, IFormatProvider)"/> method.
     /// </summary>
     /// <param name="roman">A string that represents the Roman number to be parsed.</param>
     [DataTestMethod]
@@ -73,12 +37,12 @@ public class Int32ExtensionTests
     public void ParseRoman_InvalidRoman_ThrowsInvalidRomanNumberException(string roman)
     {
         // Act and assert
-        Assert.ThrowsException<InvalidRomanNumberException>(() => Int32Extension.ParseRoman(roman));
+        Assert.ThrowsException<InvalidRomanNumberException>(() => StringExtensions.ParseRoman(roman));
     }
 
 
     /// <summary>
-    /// Tests the <see cref="Int32Extension.Parse(string, IFormatProvider)"/> method.
+    /// Tests the <see cref="StringExtensions.Parse(string, IFormatProvider)"/> method.
     /// </summary>
     /// <param name="roman">A string that represents the Roman number to be parsed.</param>
     /// <param name="expectedValue">An integer that represents the expected value after the parsing.</param>
@@ -87,7 +51,7 @@ public class Int32ExtensionTests
     public void TryParseRoman_ValidRoman_ReturnsTrue(string roman, int expectedValue)
     {
         // Act
-        bool actualSuccess = Int32Extension.TryParseRoman(roman, out int actualValue);
+        bool actualSuccess = StringExtensions.TryParseRoman(roman, out int actualValue);
 
         // Assert
         Assert.IsTrue(actualSuccess);
@@ -96,7 +60,7 @@ public class Int32ExtensionTests
 
 
     /// <summary>
-    /// Tests the <see cref="Int32Extension.TryParseRoman(string?, out int)"/> method.
+    /// Tests the <see cref="StringExtensions.TryParseRoman(string?, out int)"/> method.
     /// </summary>
     /// <param name="roman">A string that represents the Roman number to be parsed.</param>
     [DataTestMethod]
@@ -104,13 +68,11 @@ public class Int32ExtensionTests
     public void TryParseRoman_InvalidRoman_ReturnsFalse(string roman)
     {
         // Act
-        bool actualSuccess = Int32Extension.TryParseRoman(roman, out int actualValue);
+        bool actualSuccess = StringExtensions.TryParseRoman(roman, out int actualValue);
 
         // Assert
         Assert.IsFalse(actualSuccess);
         Assert.AreEqual(0, actualValue);
     }
-
-    #endregion
 
 }

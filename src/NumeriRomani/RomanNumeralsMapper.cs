@@ -7,7 +7,7 @@ namespace LinkeEngineering.NumeriRomani;
 /// <summary>
 /// A mapper for Roman numerals.
 /// </summary>
-internal class RomanNumeralMapper
+internal class RomanNumeralsMapper
 {
 
     #region Local Fields
@@ -15,50 +15,45 @@ internal class RomanNumeralMapper
     /// <summary>
     /// A dictionary to map integer values to their Roman representation.
     /// </summary>
-    private readonly Dictionary<int, string> _integerToRomanMap;
+    private static readonly Dictionary<int, string> _integerToRomanMap = new()
+    {
+        { 100000, "ↈ" },
+        {  50000, "ↇ"  },
+        {  10000, "ↂ" },
+        {   5000, "ↁ"  },
+        {   1000, "M"  },
+        {    900, "CM" },
+        {    500, "D"  },
+        {    400, "CD" },
+        {    100, "C"  },
+        {     90, "XC" },
+        {     50, "L"  },
+        {     40, "XL" },
+        {     10, "X"  },
+        {      9, "IX" },
+        {      5, "V"  },
+        {      4, "IV" },
+        {      1, "I"  }
+    };
 
 
     /// <summary>
     /// A dictionary to map Roman numerals to their corresponding values.
     /// </summary>
-    private readonly Dictionary<char, int> _romanToIntegerMap;
-
-    #endregion
-
-
-    #region Constructors
-
-    /// <summary>
-    /// Initializes the <see cref="RomanNumeralMapper"/>.
-    /// </summary>
-    internal RomanNumeralMapper()
+    private readonly Dictionary<char, int> _romanToIntegerMap = new()
     {
-        // integer-to-Roman map
-        _integerToRomanMap = new()
-        {
-            { 100000, "ↈ" },
-            {  50000, "ↇ"  },
-            {  10000, "ↂ" },
-            {   5000, "ↁ"  },
-            {   1000, "M"  },
-            {    900, "CM" },
-            {    500, "D"  },
-            {    400, "CD" },
-            {    100, "C"  },
-            {     90, "XC" },
-            {     50, "L"  },
-            {     40, "XL" },
-            {     10, "X"  },
-            {      9, "IX" },
-            {      5, "V"  },
-            {      4, "IV" },
-            {      1, "I"  }
-        };
-
-        // Roman-to-integer map is the reversion of a subset of the integer-to-Roman map
-        _romanToIntegerMap = _integerToRomanMap.Where(m => m.Value.Length == 1)
-                                               .ToDictionary(x => x.Value[0], x => x.Key);
-    }
+        { 'I' ,      1 },
+        { 'V' ,      5 },
+        { 'X' ,     10 },
+        { 'L' ,     50 },
+        { 'C' ,    100 },
+        { 'D' ,    500 },
+        { 'M' ,   1000 },
+        { 'ↁ' ,   5000 },
+        { 'ↂ',  10000 },
+        { 'ↇ' ,  50000 },
+        { 'ↈ', 100000 }
+    };
 
     #endregion
 
@@ -76,7 +71,10 @@ internal class RomanNumeralMapper
 
         for (int i = 0; i < romanNumber.Length; i++)
         {
-            int currentValue = _romanToIntegerMap[romanNumber[i]];
+            if (!_romanToIntegerMap.TryGetValue(romanNumber[i], out int currentValue))
+            {
+                throw new ArgumentException($"Invalid Roman numeral: {romanNumber[i]}");
+            }
 
             if (i + 1 < romanNumber.Length)
             {

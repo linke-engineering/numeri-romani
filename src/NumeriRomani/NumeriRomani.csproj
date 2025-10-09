@@ -22,10 +22,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="NumeriRomani.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
 		<None Include="../../assets/legalcode.txt" Pack="true" PackagePath="legalcode.txt" />
     <None Include="../../assets/NumeriRomani.png" Pack="true" PackagePath="NumeriRomani.png" />
     <None Include="../../Readme.md" Pack="true" PackagePath="Readme.md" />

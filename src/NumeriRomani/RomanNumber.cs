@@ -35,7 +35,7 @@ internal partial class RomanNumber
     /// <summary>
     /// A mapper for Roman numerals.
     /// </summary>
-    private readonly RomanNumeralMapper _mapper = new();
+    private readonly RomanNumeralsMapper _mapper = new();
 
 
     /// <summary>
@@ -62,7 +62,7 @@ internal partial class RomanNumber
     {
         if (number < MinValue || number > MaxValue)
         {
-            throw new ArgumentOutOfRangeException(nameof(number), $"Currently only integers between {MinValue} and {MaxValue} are supported.");
+            throw new ArgumentOutOfRangeException(nameof(number), $"Only integers between {MinValue} and {MaxValue} are supported.");
         }
 
         _value = number;
