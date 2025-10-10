@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>LinkeEngineering.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>LinkeEngineering.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<Deterministic>true</Deterministic>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Title>$(AssemblyName)</Title>
     <Authors>linke-engineering</Authors>
