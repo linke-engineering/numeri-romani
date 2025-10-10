@@ -23,12 +23,18 @@ on:
         required: true
         default: 'main'
 
-env:
-  DOTNET_VERSION: '8.0.x'
-
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      DOTNET_VERSION: '8.0.x'
+      PROJECT_DIR: src/NumeriRomani
+      ASSET_DIR: assets
+      FILES_TO_COPY: |
+        LICENSE
+        NumeriRomani.png
+        Readme.md
 
     steps:
       - name: Checkout
@@ -51,15 +57,18 @@ jobs:
       - name: Extract version from release
         id: get_version
         run: |
-          VERSION=$(echo "${GITHUB_REF#refs/tags/v}" | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+')
+          VERSION=$(echo "${{ github.event.release.name }}" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-      - name: Debug file paths
+      - name: Copy asset files into project folder
         run: |
-          pwd
-          ls -la
-          ls -la src/NumeriRomani
-          ls -la assets
+          for file in $FILES_TO_COPY; do
+            if [ -f "$ASSET_DIR/$file" ]; then
+              cp "$ASSET_DIR/$file" "$PROJECT_DIR/$file"
+            elif [ -f "$file" ]; then
+              cp "$file" "$PROJECT_DIR/$file"
+            fi
+          done
 
       - name: Pack
         run: dotnet pack --configuration Release --no-restore --output ./nupkg /p:Version=${{ env.VERSION }}
