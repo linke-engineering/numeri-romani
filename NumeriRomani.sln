@@ -13,8 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumeriRomani.UnitTests", "t
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{2E797756-1912-4E31-8DD3-5531F2441399}"
 	ProjectSection(SolutionItems) = preProject
+		assets\LICENSE = assets\LICENSE
 		assets\NumeriRomani.png = assets\NumeriRomani.png
-		assets\LICENSE.txt = assets\LICENSE.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B19B4157-2DC1-4D5F-AC7B-8E8F8652F3AF}"

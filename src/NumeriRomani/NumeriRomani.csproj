@@ -20,8 +20,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="../../assets/LICENSE.txt" Pack="true" PackagePath="LICENSE" />
-    <None Include="../../assets/NumeriRomani.png" Pack="true" PackagePath="NumeriRomani.png" />
+		<None Include="../../assets/LICENSE" Pack="true" PackagePath="LICENSE" />
+		<None Include="../../assets/NumeriRomani.png" Pack="true" PackagePath="NumeriRomani.png" />
     <None Include="../../Readme.md" Pack="true" PackagePath="Readme.md" />
   </ItemGroup>
 
