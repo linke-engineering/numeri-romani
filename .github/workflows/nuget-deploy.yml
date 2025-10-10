@@ -54,6 +54,13 @@ jobs:
           VERSION=$(echo "${GITHUB_REF#refs/tags/v}" | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
+      - name: Debug file paths
+        run: |
+          pwd
+          ls -la
+          ls -la src/NumeriRomani
+          ls -la assets
+
       - name: Pack
         run: dotnet pack --configuration Release --no-restore --output ./nupkg /p:Version=${{ env.VERSION }}
 
