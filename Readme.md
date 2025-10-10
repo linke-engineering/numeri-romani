@@ -71,4 +71,4 @@ bool isSuccess = roman.TryParseRoman(out int number);
 
 ## License
 
-This library is licensed under the MIT License, with additional terms restricting the use of the original package name for modified versions. Please refer to the [license file](License) for details.
+This library is licensed under the MIT License, with additional terms restricting the use of the original package name for modified versions. Please refer to the [license file](https://github.com/linke-engineering/numeri-romani/blob/main/assets/License.txt) for details.
