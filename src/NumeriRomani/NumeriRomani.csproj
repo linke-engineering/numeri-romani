@@ -10,19 +10,17 @@
     <Title>$(AssemblyName)</Title>
     <Authors>linke-engineering</Authors>
     <Company>Linke Genealogical Engineering</Company>
-		<Version>1.1.0</Version>
-    <Description>A .NET library for dealing with Roman numerals</Description>
+    <Description>A modern .NET library for converting, formatting, and parsing Roman numerals. Includes extension methods for int and string, custom formatting support, and validation for Roman numeral strings. Supports numeric values from 0 to 499,999.</Description>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/linke-engineering/numeri-romani.git</RepositoryUrl>
-    <PackageTags>Roman; numerals; conversion</PackageTags>
-    <ApplicationIcon>NumeriRomani.ico</ApplicationIcon>
+    <PackageTags>roman; numerals; roman numerals; conversion; parse; format; formatter; extension; .NET; C#; validation; numbers; string; int; library</PackageTags>
     <PackageIcon>NumeriRomani.png</PackageIcon>
-    <PackageLicenseFile>legalcode.txt</PackageLicenseFile>
-    <Copyright>Copyright (c) Linke Genealogical Engineering 2023-2025</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Copyright>Copyright (c) 2023-2025 Linke Genealogical Engineering</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
-		<None Include="../../assets/legalcode.txt" Pack="true" PackagePath="legalcode.txt" />
+    <None Include="../../assets/LICENSE.txt" Pack="true" PackagePath="LICENSE" />
     <None Include="../../assets/NumeriRomani.png" Pack="true" PackagePath="NumeriRomani.png" />
     <None Include="../../Readme.md" Pack="true" PackagePath="Readme.md" />
   </ItemGroup>

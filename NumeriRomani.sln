@@ -13,14 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumeriRomani.UnitTests", "t
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{2E797756-1912-4E31-8DD3-5531F2441399}"
 	ProjectSection(SolutionItems) = preProject
-		assets\legalcode.txt = assets\legalcode.txt
 		assets\NumeriRomani.png = assets\NumeriRomani.png
+		assets\LICENSE.txt = assets\LICENSE.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B19B4157-2DC1-4D5F-AC7B-8E8F8652F3AF}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\publish-to-nuget.yml = .github\workflows\publish-to-nuget.yml
+		.github\copilot-instructions.md = .github\copilot-instructions.md
 		Readme.md = Readme.md
+		.github\workflows\nuget-deploy.yml = .github\workflows\nuget-deploy.yml
 	EndProjectSection
 EndProject
 Global

@@ -14,8 +14,8 @@ public static class Int32Extensions
     /// <returns>The value as Roman numeral.</returns>
     public static string ToRoman(this int value)
     {
-        RomanNumber romanNumber = new(value);
-        return romanNumber.ToString();
+        RomanNumeral roman = new(value);
+        return roman.ToString();
     }
 
 }
