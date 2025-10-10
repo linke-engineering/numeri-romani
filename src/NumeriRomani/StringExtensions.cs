@@ -2,7 +2,7 @@
 
 
 /// <summary>
-/// Extends the <see cref="string"/> class.
+/// Extends the <see cref="String"/> class.
 /// </summary>
 public static class StringExtensions
 {
@@ -14,8 +14,8 @@ public static class StringExtensions
     /// <returns>An integer that represents the conversion result.</returns>
     public static int ParseRoman(this string s)
     {
-        RomanNumber romanNumber = new(s);
-        return romanNumber.Value;
+        var roman = new RomanNumeral(s);
+        return roman.IntValue;
     }
 
 
@@ -23,7 +23,7 @@ public static class StringExtensions
     /// Converts the Roman numeral representation of a value to its integer equivalent.
     /// </summary>
     /// <param name="s">A string that represents the value written in Roman numerals.</param>
-    /// <param name="value">An integer that takes the conversion result.</param>
+    /// <param name="value">An integer that takes the conversion result. If the conversion fails, the value will be set to 0.</param>
     /// <returns>True if the value was converted successfully, otherwise false.</returns>
     public static bool TryParseRoman(this string s, out int value)
     {

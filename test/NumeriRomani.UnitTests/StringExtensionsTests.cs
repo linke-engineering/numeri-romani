@@ -14,7 +14,7 @@ public class StringExtensionsTests
     /// <summary>
     /// Tests the <see cref="StringExtensions.Parse(string, IFormatProvider)"/> method.
     /// </summary>
-    /// <param name="roman">A string that represents the Roman number to be parsed.</param>
+    /// <param name="roman">A string that represents the Roman numeral to be parsed.</param>
     /// <param name="expectedValue">An integer that represents the expected value after the parsing.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.RomansAndInts), typeof(TestData), DynamicDataSourceType.Method)]
@@ -31,20 +31,20 @@ public class StringExtensionsTests
     /// <summary>
     /// Tests the <see cref="StringExtensions.Parse(string, IFormatProvider)"/> method.
     /// </summary>
-    /// <param name="roman">A string that represents the Roman number to be parsed.</param>
+    /// <param name="roman">A string that represents the Roman numeral to be parsed.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.InvalidRomans), typeof(TestData), DynamicDataSourceType.Method)]
     public void ParseRoman_InvalidRoman_ThrowsInvalidRomanNumberException(string roman)
     {
         // Act and assert
-        Assert.ThrowsException<InvalidRomanNumberException>(() => StringExtensions.ParseRoman(roman));
+        Assert.ThrowsException<InvalidRomanNumeralException>(() => StringExtensions.ParseRoman(roman));
     }
 
 
     /// <summary>
     /// Tests the <see cref="StringExtensions.Parse(string, IFormatProvider)"/> method.
     /// </summary>
-    /// <param name="roman">A string that represents the Roman number to be parsed.</param>
+    /// <param name="roman">A string that represents the Roman numeral to be parsed.</param>
     /// <param name="expectedValue">An integer that represents the expected value after the parsing.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.RomansAndInts), typeof(TestData), DynamicDataSourceType.Method)]
@@ -62,7 +62,7 @@ public class StringExtensionsTests
     /// <summary>
     /// Tests the <see cref="StringExtensions.TryParseRoman(string?, out int)"/> method.
     /// </summary>
-    /// <param name="roman">A string that represents the Roman number to be parsed.</param>
+    /// <param name="roman">A string that represents the Roman numeral to be parsed.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.InvalidRomans), typeof(TestData), DynamicDataSourceType.Method)]
     public void TryParseRoman_InvalidRoman_ReturnsFalse(string roman)

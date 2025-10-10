@@ -11,14 +11,14 @@ public class Int32ExtensionsTests
     /// <summary>
     /// Tests the <see cref="Int32Extensions.ToRoman(int)"/> method.
     /// </summary>
-    /// <param name="number">An integer that represents the number to be formatted.</param>
-    /// <param name="expectedString">A string that represents the Roman number.</param>
+    /// <param name="value">An integer that represents the value to be formatted.</param>
+    /// <param name="expectedString">A string that represents the Roman numeral.</param>
     [DataTestMethod]
     [DynamicData(nameof(TestData.IntsAndRomans), typeof(TestData), DynamicDataSourceType.Method)]
-    public void ToRoman_ValidInteger_ReturnsRoman(int number, string expectedString)
+    public void ToRoman_ValidInteger_ReturnsRoman(int value, string expectedString)
     {
         // Act
-        string actualString = number.ToRoman();
+        string actualString = value.ToRoman();
 
         // Assert
         Assert.AreEqual(expectedString, actualString);

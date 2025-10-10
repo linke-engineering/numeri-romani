@@ -2,7 +2,7 @@
 
 
 /// <summary>
-/// A formatter to format numbers as Roman numerals.
+/// A formatter to format integer values as Roman numerals.
 /// </summary>
 public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
 {
@@ -12,7 +12,7 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
     /// <summary>
     /// A list of allowed format strings.
     /// </summary>
-    private static readonly HashSet<string?> _validFormatStrings = new() { null, "", "g", "G", "R" };
+    private static readonly HashSet<string?> _validFormatStrings = [null, "", "g", "G", "R"];
 
     #endregion
 
@@ -51,14 +51,14 @@ public class RomanNumeralsFormatter : IFormatProvider, ICustomFormatter
         }
 
         // Reject values that aren't non-negative integers
-        if (!Int32.TryParse(argString, out int number))
+        if (!Int32.TryParse(argString, out int value))
         {
             throw new ArgumentException($"{arg} is not an integer.", nameof(arg));
         }
 
         // Convert to Roman representation
-        RomanNumber romanNumber = new(number);
-        return romanNumber.ToString();
+        RomanNumeral roman = new(value);
+        return roman.ToString();
     }
 
     #endregion

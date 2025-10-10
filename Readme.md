@@ -1,6 +1,6 @@
 # Numeri Romani
 
-A .NET library for working with Roman numerals
+A modern .NET library for converting and validating Roman numerals in your applications.
 
 ## Installation
 
@@ -69,7 +69,6 @@ bool isSuccess = roman.TryParseRoman(out int number);
 // returns true and assigns 123 to number
 ```
 
-
 ## License
 
-This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nd/4.0/).
+This library is licensed under the MIT License, with additional terms restricting the use of the original package name for modified versions. Please refer to the [license file](License) for details.

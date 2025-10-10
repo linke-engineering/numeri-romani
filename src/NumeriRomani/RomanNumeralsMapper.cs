@@ -61,24 +61,24 @@ internal class RomanNumeralsMapper
     #region Methods
 
     /// <summary>
-    /// Converts a Roman number to an integer value.
+    /// Converts a Roman numeral to an integer value.
     /// </summary>
-    /// <param name="romanNumber">A string that represents the Roman number.</param>
-    /// <returns>An integer that represents the value of the Roman number.</returns>
-    internal int ConvertRomanToInteger(string romanNumber)
+    /// <param name="roman">A string that represents the Roman numeral.</param>
+    /// <returns>An integer that represents the value of the Roman numeral.</returns>
+    internal int ConvertRomanToInteger(string roman)
     {
-        int value = 0;
+        var value = 0;
 
-        for (int i = 0; i < romanNumber.Length; i++)
+        for (var i = 0; i < roman.Length; i++)
         {
-            if (!_romanToIntegerMap.TryGetValue(romanNumber[i], out int currentValue))
+            if (!_romanToIntegerMap.TryGetValue(roman[i], out int currentValue))
             {
-                throw new ArgumentException($"Invalid Roman numeral: {romanNumber[i]}");
+                throw new ArgumentException($"Invalid Roman numeral: {roman[i]}");
             }
 
-            if (i + 1 < romanNumber.Length)
+            if (i + 1 < roman.Length)
             {
-                int nextValue = _romanToIntegerMap[romanNumber[i + 1]];
+                var nextValue = _romanToIntegerMap[roman[i + 1]];
 
                 if (currentValue < nextValue)
                 {
@@ -106,23 +106,23 @@ internal class RomanNumeralsMapper
     /// <returns>A string that represents the value written in Roman numerals.</returns>
     internal string ConvertIntegerToRoman(int value)
     {
-        StringBuilder stringBuilder = new();
+        var romanBuilder = new StringBuilder();
 
-        foreach (KeyValuePair<int, string> roman in _integerToRomanMap)
+        foreach (var map in _integerToRomanMap)
         {
             if (value <= 0)
             {
                 break;
             }
 
-            while (value >= roman.Key)
+            while (value >= map.Key)
             {
-                stringBuilder.Append(roman.Value);
-                value -= roman.Key;
+                romanBuilder.Append(map.Value);
+                value -= map.Key;
             }
         }
 
-        return stringBuilder.ToString();
+        return romanBuilder.ToString();
     }
 
     #endregion
