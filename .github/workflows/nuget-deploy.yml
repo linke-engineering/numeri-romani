@@ -30,6 +30,9 @@ jobs:
     env:
       DOTNET_VERSION: '8.0.x'
 
+    permissions:
+      id-token: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -57,5 +60,11 @@ jobs:
       - name: Pack
         run: dotnet pack --configuration Release --no-restore --output ./nupkg /p:Version=${{ env.VERSION }}
 
+      - name: Login to NuGet
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+          
       - name: Publish to NuGet
-        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
