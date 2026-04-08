@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOTNET_VERSION: '8.0.x'
+      DOTNET_VERSION: '10.0.x'
 
     permissions:
       id-token: write
