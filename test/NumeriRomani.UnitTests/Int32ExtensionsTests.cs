@@ -13,8 +13,8 @@ public class Int32ExtensionsTests
     /// </summary>
     /// <param name="value">An integer that represents the value to be formatted.</param>
     /// <param name="expectedString">A string that represents the Roman numeral.</param>
-    [DataTestMethod]
-    [DynamicData(nameof(TestData.IntsAndRomans), typeof(TestData), DynamicDataSourceType.Method)]
+    [TestMethod]
+    [DynamicData(nameof(TestData.IntsAndRomans), typeof(TestData))]
     public void ToRoman_ValidInteger_ReturnsRoman(int value, string expectedString)
     {
         // Act
@@ -29,12 +29,12 @@ public class Int32ExtensionsTests
     /// Tests the <see cref="Int32Extensions.ToRoman(int)"/> method.
     /// </summary>
     /// <param name="number">An integer that represents the number to be formatted.</param>
-    [DataTestMethod]
-    [DynamicData(nameof(TestData.InvalidInts), typeof(TestData), DynamicDataSourceType.Method)]
+    [TestMethod]
+    [DynamicData(nameof(TestData.InvalidInts), typeof(TestData))]
     public void ToRoman_OutOfRange_ThrowsArgumentOutOfRangeException(int number)
     {
         // Act and assert
-        Assert.ThrowsException<ArgumentOutOfRangeException>(() => number.ToRoman());
+        Assert.Throws<ArgumentOutOfRangeException>(() => number.ToRoman());
     }
 
 }
