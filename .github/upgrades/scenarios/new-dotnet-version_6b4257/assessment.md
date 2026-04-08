@@ -57,15 +57,15 @@ This document provides a comprehensive overview of the projects and their depend
 | 🔴 Binary Incompatible | 0 | High - Require code changes |
 | 🟡 Source Incompatible | 0 | Medium - Needs re-compilation and potential conflicting API error fixing |
 | 🔵 Behavioral change | 0 | Low - Behavioral changes that may require testing at runtime |
-| ✅ Compatible | 612 |  |
-| ***Total APIs Analyzed*** | ***612*** |  |
+| ✅ Compatible | 597 |  |
+| ***Total APIs Analyzed*** | ***597*** |  |
 
 ## Aggregate NuGet packages details
 
 | Package | Current Version | Suggested Version | Projects | Description |
 | :--- | :---: | :---: | :--- | :--- |
-| Microsoft.NET.Test.Sdk | 17.12.0 |  | [NumeriRomani.UnitTests.csproj](#testnumeriromaniunittestsnumeriromaniunittestscsproj) | ✅Compatible |
-| MSTest | 3.7.2 |  | [NumeriRomani.UnitTests.csproj](#testnumeriromaniunittestsnumeriromaniunittestscsproj) | ✅Compatible |
+| Microsoft.NET.Test.Sdk | 18.4.0 |  | [NumeriRomani.UnitTests.csproj](#testnumeriromaniunittestsnumeriromaniunittestscsproj) | ✅Compatible |
+| MSTest | 4.2.1 |  | [NumeriRomani.UnitTests.csproj](#testnumeriromaniunittestsnumeriromaniunittestscsproj) | ✅Compatible |
 
 ## Top API Migration Challenges
 
@@ -186,6 +186,6 @@ flowchart TB
 | 🔴 Binary Incompatible | 0 | High - Require code changes |
 | 🟡 Source Incompatible | 0 | Medium - Needs re-compilation and potential conflicting API error fixing |
 | 🔵 Behavioral change | 0 | Low - Behavioral changes that may require testing at runtime |
-| ✅ Compatible | 265 |  |
-| ***Total APIs Analyzed*** | ***265*** |  |
+| ✅ Compatible | 250 |  |
+| ***Total APIs Analyzed*** | ***250*** |  |
 

@@ -7,8 +7,8 @@
     "targetId": "net10.0",
     "targetDisplayName": ".NETCoreApp,Version=v10.0"
   },
-  "analysisStartTime": "2026-04-08T16:29:01.265464Z",
-  "analysisEndTime": "2026-04-08T16:29:01.3417066Z",
+  "analysisStartTime": "2026-04-08T16:33:18.6462717Z",
+  "analysisEndTime": "2026-04-08T16:33:18.8116624Z",
   "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
   "stats": {
     "summary": {
@@ -58,7 +58,7 @@
       },
       "ruleInstances": [
         {
-          "incidentId": "3a48be87-3851-4e5f-a612-750669100460",
+          "incidentId": "c9fbcbda-3d8a-4f94-a09c-565ef02ab32d",
           "ruleId": "Project.0002",
           "projectPath": "src\\NumeriRomani\\NumeriRomani.csproj",
           "state": "Active",
@@ -100,15 +100,15 @@
         "isSdkStyle": true,
         "numberOfFiles": 8,
         "numberOfCodeFiles": 6,
-        "linesTotal": 2142,
+        "linesTotal": 3003,
         "linesOfCode": 359,
-        "totalApiScanned": 265,
+        "totalApiScanned": 250,
         "minLinesOfCodeToChange": 0,
         "maxLinesOfCodeToChange": 0
       },
       "ruleInstances": [
         {
-          "incidentId": "70ad22cb-14f9-4a79-9de1-68ff11e62f4f",
+          "incidentId": "26b23096-8806-4704-907e-a87696cb0dbe",
           "ruleId": "Project.0002",
           "projectPath": "test\\NumeriRomani.UnitTests\\NumeriRomani.UnitTests.csproj",
           "state": "Active",
