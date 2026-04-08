@@ -1,0 +1,3 @@
+Issue-ID,Beschreibung,Status,Schweregrad,Story Points,Projektpfad,Art des Speicherorts,Pfad,Linie,Spalte,Incident-ID,Hilfelink,Assemblyname,Assemblyversion,Öffentlicher Schlüssel für Assembly.,Ausschnitt
+Project.0002,Die Zielframeworks des Projekts müssen geändert werden,Active,Mandatory,1,src\NumeriRomani\NumeriRomani.csproj,File,src\NumeriRomani\NumeriRomani.csproj,,,,,,,,Aktuelles Zielframework: net8.0 Empfohlenes Zielframework: net10.0
+Project.0002,Die Zielframeworks des Projekts müssen geändert werden,Active,Mandatory,1,test\NumeriRomani.UnitTests\NumeriRomani.UnitTests.csproj,File,test\NumeriRomani.UnitTests\NumeriRomani.UnitTests.csproj,,,,,,,,Aktuelles Zielframework: net8.0 Empfohlenes Zielframework: net10.0
