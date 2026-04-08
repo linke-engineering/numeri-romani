@@ -7,8 +7,8 @@
     "targetId": "net10.0",
     "targetDisplayName": ".NETCoreApp,Version=v10.0"
   },
-  "analysisStartTime": "2026-04-08T16:27:20.4635153Z",
-  "analysisEndTime": "2026-04-08T16:27:21.5491617Z",
+  "analysisStartTime": "2026-04-08T16:29:01.265464Z",
+  "analysisEndTime": "2026-04-08T16:29:01.3417066Z",
   "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
   "stats": {
     "summary": {
@@ -58,7 +58,7 @@
       },
       "ruleInstances": [
         {
-          "incidentId": "a1d1a322-9528-448a-9ae8-14f085e94a6d",
+          "incidentId": "3a48be87-3851-4e5f-a612-750669100460",
           "ruleId": "Project.0002",
           "projectPath": "src\\NumeriRomani\\NumeriRomani.csproj",
           "state": "Active",
@@ -108,7 +108,7 @@
       },
       "ruleInstances": [
         {
-          "incidentId": "da39995c-8da8-4347-824b-45af8910a37e",
+          "incidentId": "70ad22cb-14f9-4a79-9de1-68ff11e62f4f",
           "ruleId": "Project.0002",
           "projectPath": "test\\NumeriRomani.UnitTests\\NumeriRomani.UnitTests.csproj",
           "state": "Active",
