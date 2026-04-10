@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33414.496
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumeriRomani", "src\NumeriRomani\NumeriRomani.csproj", "{034A4762-55FB-4855-9DA8-EDE71EE68F6F}"
 EndProject
@@ -11,16 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FF531C82-0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumeriRomani.UnitTests", "test\NumeriRomani.UnitTests\NumeriRomani.UnitTests.csproj", "{4DA3598B-3BB6-4A02-8BFC-BF9640483394}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{2E797756-1912-4E31-8DD3-5531F2441399}"
-	ProjectSection(SolutionItems) = preProject
-		assets\License.txt = assets\License.txt
-		assets\NumeriRomani.png = assets\NumeriRomani.png
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B19B4157-2DC1-4D5F-AC7B-8E8F8652F3AF}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\auto-tag.yml = .github\workflows\auto-tag.yml
 		.github\copilot-instructions.md = .github\copilot-instructions.md
+		src\NumeriRomani\License.txt = src\NumeriRomani\License.txt
 		.github\workflows\nuget-deploy.yml = .github\workflows\nuget-deploy.yml
+		assets\NumeriRomani.png = assets\NumeriRomani.png
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
@@ -37,7 +34,6 @@ Global
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
