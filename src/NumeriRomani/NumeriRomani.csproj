@@ -17,13 +17,14 @@
     <PackageTags>roman; numerals; roman numerals; conversion; parse; format; formatter; extension; .NET; C#; validation; numbers; string; int; library</PackageTags>
     <PackageIcon>NumeriRomani.png</PackageIcon>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <Copyright>Copyright (c) 2023-2025 Linke Genealogical Engineering</Copyright>
+    <Copyright>Copyright (c) 2023-2026 Linke Genealogical Engineering</Copyright>
+    <Version>1.1.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
+		<None Include="../../Readme.md" Pack="true" PackagePath="Readme.md" />
 		<None Include="../../assets/License.txt" Pack="true" PackagePath="License.txt" />
 		<None Include="../../assets/NumeriRomani.png" Pack="true" PackagePath="NumeriRomani.png" />
-    <None Include="../../Readme.md" Pack="true" PackagePath="Readme.md" />
   </ItemGroup>
 
 </Project>
