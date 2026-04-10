@@ -6,7 +6,7 @@
 #   to NuGet when a new release is published in the main branch.
 #
 # Prerequisites:
-#   - The repository must contain a valid .NET 8 project.
+#   - The repository must contain a valid .NET project.
 #   - The NuGet API key must be stored in the repository secrets as NUGET_API_KEY.
 #   - The release tag must follow the format: v<major>.<minor>.<patch> (e.g., v1.2.3).
 # -----------------------------------------------------------------------------
@@ -17,11 +17,6 @@ on:
   release:
     types: [published]
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to publish'
-        required: true
-        default: 'main'
 
 jobs:
   build:
@@ -34,11 +29,11 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -54,17 +49,11 @@ jobs:
       - name: Extract version from release
         id: get_version
         run: |
-          VERSION=$(echo "${{ github.event.release.name }}" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+          VERSION=$(echo "${{ github.event.release.tag_name }}" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Pack
         run: dotnet pack --configuration Release --no-restore --output ./nupkg /p:Version=${{ env.VERSION }}
 
-      - name: Login to NuGet
-        uses: NuGet/login@v1
-        id: login
-        with:
-          user: ${{ secrets.NUGET_USER }}
-          
       - name: Publish to NuGet
-        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
