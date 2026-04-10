@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.4.11626.88 stable
+VisualStudioVersion = 18.4.11626.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumeriRomani", "src\NumeriRomani\NumeriRomani.csproj", "{034A4762-55FB-4855-9DA8-EDE71EE68F6F}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\auto-tag.yml = .github\workflows\auto-tag.yml
 		.github\copilot-instructions.md = .github\copilot-instructions.md
-		src\NumeriRomani\License.txt = src\NumeriRomani\License.txt
+		assets\License.txt = assets\License.txt
 		.github\workflows\nuget-deploy.yml = .github\workflows\nuget-deploy.yml
 		assets\NumeriRomani.png = assets\NumeriRomani.png
 		Readme.md = Readme.md
@@ -34,6 +34,7 @@ Global
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA3598B-3BB6-4A02-8BFC-BF9640483394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
